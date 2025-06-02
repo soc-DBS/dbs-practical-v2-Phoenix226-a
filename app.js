@@ -1,5 +1,6 @@
 const express = require('express');
 const createHttpError = require('http-errors');
+const cors = require('cors');
 
 const modulesRoute = require('./routes/modules');
 const reportsRoute = require('./routes/reports');
@@ -10,6 +11,7 @@ const authRoute = require('./routes/auth');
 const app = express();
 app.use(express.json()); // to process JSON in request body
 
+app.use(cors())
 
 app.use(express.static('public'));
 
